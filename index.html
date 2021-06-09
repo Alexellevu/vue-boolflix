@@ -10,9 +10,9 @@
 <body>
     <div class="container" id="app">
         <nav>
-            <input type="text" v-model="query"  >
+            <input type="text" v-model="query">
             
-            <button>search</button>
+            <button @onclick="searchMovies(query)">search</button>
         </nav>
 
         
