@@ -6,7 +6,8 @@ const app = new Vue({
         apiKey:'baafb21ea0b84e839d86a829c7a751c1',
         query:'',
         error:'',
-        movies:''
+        movies:'',
+        voto:[]
     },
 
     methods:{
@@ -23,6 +24,14 @@ const app = new Vue({
             console.log(response);
             this.movies=response.data.results;
             console.log(this.movies);
+            for(var i=0; i<response.data.results.length; i++){
+            this.voto.push(Math.ceil(response.data.results[i].vote_average/2));
+       
+            }
+            console.log(this.voto);
+            
+           
+
 
             })
             

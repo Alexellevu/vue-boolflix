@@ -6,7 +6,8 @@ const app = new Vue({
         apiKey:'baafb21ea0b84e839d86a829c7a751c1',
         query:'',
         error:'',
-        movies:''
+        movies:'',
+       
     },
 
     methods:{
@@ -23,6 +24,8 @@ const app = new Vue({
             console.log(response);
             this.movies=response.data.results;
             console.log(this.movies);
+           
+            }
 
             })
             
