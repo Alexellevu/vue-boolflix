@@ -7,34 +7,30 @@ const app = new Vue({
         query:'',
         error:'',
         movies:'',
-        voti:[]
+        voti:[],
+        vuote:[]
         
     },
 
     methods:{
         searchMovies(query)  {
-            console.log(query);
+            /* console.log(query); */
             const fullUrl = this.url +'api_key='+ this.apiKey +'&query='+ this.query;
-     
-
-             console.log(fullUrl);
+            /* console.log(fullUrl); */
  
             axios
             .get(fullUrl)
             .then(response => {
-            console.log(response);
+            /* console.log(response); */
             this.movies=response.data.results;
-            console.log(this.movies);
+           /*  console.log(this.movies); */
             for(var i=0; i<response.data.results.length; i++){
             this.voti.push(Math.ceil(response.data.results[i].vote_average/2));
-       
+            this.vuote.push(Math.ceil(4-[response.data.results[i].vote_average/2]))
             }
-            console.log(this.voti);
-           
-           
-
-
-            })
+          /*   console.log(this.voti); */
+          console.log(this.vuote);
+           })
             
             .catch(e => {
                 console.error(e);
