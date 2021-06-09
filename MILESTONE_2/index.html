@@ -17,15 +17,19 @@
             
             <button @click="searchMovies(query)">search</button>
         </nav>
-      <!--  <i class="fas fa-star"></i> -->
+   
         <ul>
+            
             <li v-for="(movie, index) in movies">
                 {{movies[index].title}},
                 {{movies[index].original_title}},
                 {{movies[index].original_language}},
-                {{movies[index].vote_average}}
+                <i v-for="voto in voti[index]" class="fas fa-star"> </i>
             </li>
         </ul>
+     
+        
+
         
         
         

@@ -7,7 +7,8 @@ const app = new Vue({
         query:'',
         error:'',
         movies:'',
-        voto:[]
+        voti:[]
+        
     },
 
     methods:{
@@ -25,11 +26,11 @@ const app = new Vue({
             this.movies=response.data.results;
             console.log(this.movies);
             for(var i=0; i<response.data.results.length; i++){
-            this.voto.push(Math.ceil(response.data.results[i].vote_average/2));
+            this.voti.push(Math.ceil(response.data.results[i].vote_average/2));
        
             }
-            console.log(this.voto);
-            
+            console.log(this.voti);
+           
            
 
 
