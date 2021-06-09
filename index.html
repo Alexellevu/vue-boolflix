@@ -12,9 +12,16 @@
         <nav>
             <input type="text" v-model="query">
             
-            <button @onclick="searchMovies(query)">search</button>
+            <button @click="searchMovies(query)">search</button>
         </nav>
-
+        <ul>
+            <li v-for="(movie, index) in movies">
+                {{movies[index].title}}
+                {{movies[index].original_title}}
+            </li>
+        </ul>
+        
+        
         
 
     </div>
