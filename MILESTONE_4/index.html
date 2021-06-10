@@ -11,6 +11,7 @@
     <title>vue-boolflix</title>
 </head>
 <body>
+   
     <div class="container" id="app">
         <header>
             <div class="logo">
@@ -24,59 +25,65 @@
     
       <main>
    
+
         <div class="film_container">
-        
             
             <div class="card" v-for="(movie, index) in movies">
+                
+                
                
-                <div class="cover">
-                    <img :src="'https://image.tmdb.org/t/p/w342'+movies[index].poster_path" alt="">
+                <div class="info">
+                    <h5>Titolo:{{movies[index].title}},</h5>
+                    <h5>Titolo originale:{{movies[index].original_title}},</h5>
+                    <p>{{movies[index].overview}},</p> 
+                         <div class="flags"> 
+                             <img :src="'https://flagcdn.com/16x12/'+ getFlags(movies[index].original_language)+'.png'">
+                        </div>
                 
+                        <div class="star"> 
+                            <i v-for="voto in voti[index]" class="fas fa-star"></i>
+                            <i v-for="vuoto in vuote[index]" class="far fa-star"></i>
+                        </div>
+                </div> 
+                 <div class="cover">
+                <img :src="'https://image.tmdb.org/t/p/w342'+movies[index].poster_path" alt="">
                 </div>
-                <h5>Titolo:{{movies[index].title}},</h5>
-                <h5>Titolo originale:{{movies[index].original_title}},</h5>  
-                <p>{{movies[index].overview}},</p>
-               
-                <div class="flag"> 
-               <img :src="'https://flagcdn.com/16x12/'+ getFlags(movies[index].original_language)+'.png'">
+            </div> 
+         </div>       
+         
+            <div class="tv_series_container">
+                
+                <div class="card" v-for="(tv, index) in tvSeries">
+                
+                    <div class="cover"> 
+                        <img :src="'https://image.tmdb.org/t/p/w342'+tvSeries[index].poster_path" alt="">
+                      </div>
+                      <div class="info">
+                            <h5>{{tvSeries[index].name}},</h5>  
+                            <h5>{{tvSeries[index].original_name}},</h5>  
+                            <p>{{tvSeries[index].overview}},</p>  
+                    
+                    <div class="flags"> 
+                        <img :src="'https://flagcdn.com/16x12/'+getFlags(tvSeries[index].original_language)+'.png'">
+                    </div>
+                
+                    <div class="star"> 
+                        <i v-for="voto in voti[index]" class="fas fa-star"></i>
+                        <i v-for="vuoto in vuote[index]" class="far fa-star"></i>
+                    </div>
+                    </div>
                 </div>
-                
-                <div class="star"> 
-                     <i v-for="voto in voti[index]" class="fas fa-star"></i>
-                    <i v-for="vuoto in vuote[index]" class="far fa-star"></i>
-                </div>
-               
-                
-               </div> 
-            </div>    
-         </div>
-        
-
-         <div class="tv_series_container">
-            <div class="card" v-for="(tv, index) in tvSeries">
-                {{tvSeries[index].name}},
-                {{tvSeries[index].original_name}},
-                {{tvSeries[index].overview}},
-                <img :src="'https://flagcdn.com/16x12/'+ getFlags(tvSeries[index].original_language)+'.png'">
-                
-                <i v-for="voto in voti[index]" class="fas fa-star"></i>
-                <i v-for="vuoto in vuote[index]" class="far fa-star"></i>
-                <div class="cover"> 
-                    <img :src="'https://image.tmdb.org/t/p/w342'+tvSeries[index].poster_path" alt="">
-                </div>
-               
-                
-            </div>
-        </div>
             
-        
-        
-
+               
+               
+                </div>   
+                
         
         
         </main>
-
     </div>
+        
+
     
 
     
