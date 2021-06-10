@@ -28,7 +28,7 @@
               <img :src="'https://flagcdn.com/16x12/'+ getFlags(movies[index].original_language)+'.png'">
                 <i v-for="voto in voti[index]" class="fas fa-star"></i>
                 <i v-for="vuoto in vuote[index]" class="far fa-star"></i>
-                <img :src="movies[index].poster_path" alt="">
+                <img :src="'https://image.tmdb.org/t/p/w342'+movies[index].poster_path" alt="">
                 
             </li>
         </ul>
@@ -43,6 +43,7 @@
                 
                 <i v-for="voto in voti[index]" class="fas fa-star"></i>
                 <i v-for="vuoto in vuote[index]" class="far fa-star"></i>
+                <img :src="'https://image.tmdb.org/t/p/w342'+tvSeries[index].poster_path" alt="">
                 
             </li>
         </ul>
