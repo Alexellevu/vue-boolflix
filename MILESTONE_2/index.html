@@ -15,14 +15,28 @@
         <nav>
             <input type="text" v-model="query">
             
-            <button @click="searchMovies(query)">search</button>
+            <button @click="searchMovies(query), searchTv(query)">search</button>
         </nav>
    
+        <h1>Film</h1>
         <ul>
             
             <li v-for="(movie, index) in movies">
                 {{movies[index].title}},
                 {{movies[index].original_title}},
+                <img :src="'https://flagcdn.com/16x12/'+ movies[index].original_language +'.png'">
+                <!-- {{movies[index].original_language}} -->
+                <i v-for="voto in voti[index]" class="fas fa-star"></i>
+                <i v-for="vuoto in vuote[index]" class="far fa-star"></i>
+                
+            </li>
+        </ul>
+
+        <h1>Tv series</h1>
+        <ul>
+            <li v-for="(tv, index) in tvSeries">
+                
+                {{tvSeries[index].original_name}},
                 <img :src="'https://flagcdn.com/16x12/'+ movies[index].original_language +'.png'">
                 <!-- {{movies[index].original_language}} -->
                 <i v-for="voto in voti[index]" class="fas fa-star"></i>
