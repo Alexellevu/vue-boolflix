@@ -65,6 +65,13 @@ const app = new Vue({
             })
         },
 
+        deletePage(query){
+            if (query.length===0){
+                this.movies ='';
+                this.tvSeries='';
+            }
+        },
+
         getFlags(code) {
             if(code ==='en')code = 'gb';
             if(code ==='ja')code = 'jp' ;

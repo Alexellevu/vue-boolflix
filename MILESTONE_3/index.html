@@ -13,9 +13,9 @@
 <body>
     <div class="container" id="app">
         <nav>
-            <input type="text" v-model="query">
+            <input type="text" v-model="query" @keyup="searchMovies(query), searchTv(query),deletePage(query)" >
             
-            <button @click="searchMovies(query), searchTv(query)">search</button>
+
         </nav>
    
         <h1>Film</h1>
@@ -24,6 +24,7 @@
             <li v-for="(movie, index) in movies">
                 {{movies[index].title}},
                 {{movies[index].original_title}},
+                {{movies[index].overview}},
                 
               <img :src="'https://flagcdn.com/16x12/'+ getFlags(movies[index].original_language)+'.png'">
                 <i v-for="voto in voti[index]" class="fas fa-star"></i>
