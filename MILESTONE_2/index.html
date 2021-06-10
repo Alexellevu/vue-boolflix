@@ -24,8 +24,9 @@
             <li v-for="(movie, index) in movies">
                 {{movies[index].title}},
                 {{movies[index].original_title}},
-                <img :src="'https://flagcdn.com/16x12/'+ movies[index].original_language +'.png'">
-                <!-- {{movies[index].original_language}} -->
+                
+              <img :src="'https://flagcdn.com/16x12/'+ getFlags(movies[index].original_language)+'.png'">
+             <!--    'https://www.countryflags.io/'+ movies[index].original_language +'/flat/64.png' -->
                 <i v-for="voto in voti[index]" class="fas fa-star"></i>
                 <i v-for="vuoto in vuote[index]" class="far fa-star"></i>
                 
@@ -34,11 +35,12 @@
 
         <h1>Tv series</h1>
         <ul>
+            
             <li v-for="(tv, index) in tvSeries">
-                
+                {{tvSeries[index].name}},
                 {{tvSeries[index].original_name}},
-                <img :src="'https://flagcdn.com/16x12/'+ movies[index].original_language +'.png'">
-                <!-- {{movies[index].original_language}} -->
+                <img :src="'https://flagcdn.com/16x12/'+ getFlags(tvSeries[index].original_language)+'.png'">
+                
                 <i v-for="voto in voti[index]" class="fas fa-star"></i>
                 <i v-for="vuoto in vuote[index]" class="far fa-star"></i>
                 

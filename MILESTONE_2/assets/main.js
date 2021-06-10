@@ -12,6 +12,7 @@ const app = new Vue({
         voti:[],
         vuote:[]
         
+        
     },
 
     methods:{
@@ -55,13 +56,21 @@ const app = new Vue({
             this.vuote.push(Math.ceil(4-[response.data.results[i].vote_average/2]))
             }
           /*   console.log(this.voti); */
-          console.log(this.vuote);
+            console.log(this.vuote);
            })
             
             .catch(e => {
                 console.error(e);
                 this.error ='non è possibile connettersi all API'
             })
+        },
+
+        getFlags(code) {
+            if(code ==='en')code = 'gb';
+            if(code ==='ja')code = 'jp' ;
+            if(code ==='da') code = 'dk';
+            return code;
+
         }
     },
 
