@@ -4,7 +4,7 @@ const app = new Vue({
     data:{
         url:'https://api.themoviedb.org/3/search/movie?',
         url2:'https://api.themoviedb.org/3/search/tv?',
-        apiKey:'INSERT YOUR API KEY',
+        apiKey:'baafb21ea0b84e839d86a829c7a751c1',
         query:'',
         error:'',
         movies:'',

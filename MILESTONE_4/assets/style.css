@@ -23,6 +23,7 @@ header{
     color: red;
     font-size: medium;
     text-transform: uppercase;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 nav input{
     width: 15rem;
@@ -38,6 +39,8 @@ main{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    background-color:cyan;
+    
 }
 
 
@@ -68,7 +71,8 @@ main{
     width: 342px;
     height: 513px;
     margin: 10px;
-    border: 1px solid white;
+    
+    border-radius:10px;
     
 }
 
@@ -77,6 +81,7 @@ main{
     height: 513px;
     position: absolute;
     top: 0;
+    border-radius: 10px;
 }
 
 .info{
@@ -85,11 +90,17 @@ main{
     color: white;
     width: 342px;
     height: 513px;
+    border-radius: 10px;
 }
 
+
+.star{
+    color: yellow;
+}
 .flags img{
     width: 16px;
     height: 12px;
+    border-radius: 10px;
     
 }
 
