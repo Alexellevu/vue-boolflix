@@ -3,7 +3,7 @@ const app = new Vue({
 
     data:{
         url:'https://api.themoviedb.org/3/search/movie?',
-        apiKey:'baafb21ea0b84e839d86a829c7a751c1',
+        apiKey:'INSERT YOU API KEY',
         query:'',
         error:'',
         movies:'',
